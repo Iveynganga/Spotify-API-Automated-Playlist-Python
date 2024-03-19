@@ -6,8 +6,7 @@ A project written in Python to help with adding a specific playlist from Youtube
 
 - **Create Playlist**: Create a new playlist with a specified name on your Spotify account.
 - **Add Tracks**: Add tracks to an existing playlist on your Spotify account.
-- **Customization**: Customize playlist details such as name, description, and privacy settings.
-- **Automation**: Automate playlist management tasks by integrating the script into your workflow or other applications.
+- **Gets artist information**: Gets artist information from a playlist.
 
 ## Requirements
 
