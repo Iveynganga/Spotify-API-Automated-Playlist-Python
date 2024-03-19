@@ -1,6 +1,6 @@
 import requests
 import os
-import json  # Add this import statement for JSON handling
+import json 
 from cred import spotify_user_id, spotify_token
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
