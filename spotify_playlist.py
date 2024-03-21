@@ -20,7 +20,7 @@ class CreatePlaylist:
         os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
         api_service_name = "youtube"
         api_version = "v3"
-        client_secrets_file = "YOUR_CLIENT_SECRET_FILE.json"
+        client_secrets_file = "client_secret_832550295475-num4d637a4n5o2qgg2ppu2ds8jc9co1o.apps.googleusercontent.com.json"
         flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
             client_secrets_file, scopes=["https://www.googleapis.com/auth/youtube.readonly"]
         )
@@ -29,7 +29,7 @@ class CreatePlaylist:
         return youtube_client
     
     # Create a Spotify playlist
-    def create_playlist(self):
+    def create_her_playlist(self):
         request_body = {
             "name": "H.E.R YouTube Playlist",
             "description": "H.E.R Playlist",
@@ -47,6 +47,25 @@ class CreatePlaylist:
         response_json = response.json()
         # Return the playlist ID
         return response_json["id"]
+
+    def create_spotify_uri(self, song_name, artist):
+        
+        query = "https://api.spotify.com/v1/me/shows?offset=0&limit=20".format(
+            song_name,
+            artist
+        )
+        response = requests.get(
+            query,
+            headers={
+                "Content-Type":"application/json",
+                "Authorization":"Bearer{}".format(self.spotify_token) #send out this request
+            }
+        )
+        response_json = response.json()
+        songs = response_json["tracks"]["items"]
+        uri = songs[0]["uri"]
+
+        return uri
 
     # Get the artist information
     def get_artist_info(self, artist_name):
