@@ -27,7 +27,7 @@ class CreatePlaylist:
 
         api_service_name = "youtube"
         api_version = "v3"
-        client_secrets_file = "client_secret_832550295475-num4d637a4n5o2qgg2ppu2ds8jc9co1o.apps.googleusercontent.com.json"
+        client_secrets_file = "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"
         scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
 
     # Get credentials and create an API client

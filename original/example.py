@@ -39,13 +39,13 @@ class CreatePlaylist:
         return youtube_client
     
 
-#Go to HER playlist
+#Go to liked playlist
     def get_liked_videos(self):
         request = self.youtube_client.videos().list(
         part = "snippet,contentDetails,statistics",
         myRating="like"
     )
-    response = request.execute()
+    response = requests.execute()
 
     #collect each video and get important information
     for item in response["items"]:
